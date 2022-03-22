@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="STYLE.CSS" />
+    <script
+      src="https://kit.fontawesome.com/75c5922cab.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Contacts</title>
+  </head>
+  <body>
+    <div class="hero">
+      <form>
+        <div class="row">
+          <div class="input-group">
+            <input type="text" id="name" required />
+            <label for="name"><i class="fas fa-user"></i>Your Name</label>
+          </div>
+          <div class="input-group">
+            <input type="text" id="number" required />
+            <label for="number"
+              ><i class="fas fa-phone-square-alt"></i>Phone No.</label
+            >
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" required />
+          <label for="email"><i class="fas fa-envelope"></i>Email ID</label>
+        </div>
+        <div class="input-group">
+          <textarea id="message" rows="8" required></textarea>
+          <label for="message"
+            ><i class="fas fa-comments"></i>Your Message</label
+          >
+        </div>
+
+        <button type="submit"><i class="fas fa-paper-plane"></i>SUBMIT</button>
+      </form>
+    </div>
+  </body>
+</html>

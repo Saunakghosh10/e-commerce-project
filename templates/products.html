@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - E commerce Website</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static "products.css" %}>
+    {% load static %}
+    <link rel="stylesheet" href={% static "STYLE.CSS" %}>
+
+</head>
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+
+{% load static %}
+<script src="https://kit.fontawesome.com/75c5922cab.js" crossorigin="anonymous"></script>
+
+<body>
+
+
+    <div class="container">
+        {% include 'navbar.html' %}
+    </div>
+
+
+    <div class="small-container">
+
+        <div class="row row-2">
+            <h2>All Products</h2>
+            
+            <form id="sort-form" method="post" action="."> {% csrf_token %}
+                <p>Sort By</p>
+                    <select id="sort-id" name="sort" onchange="submit_sort(); return false;">
+                        <option name="default" value="default">Default</option>
+                        <option name="price" value="price">Price (Ascending)</option>
+                        <option name="!price" value="!price">Price (Descending)</option>
+                        <option name="alpha" value="alpha">Alphabet (A-Z)</option>
+                        <option name="!aplha" value="!alpha">Alphabet (Z-A)</option>
+                    </select>
+
+                <div class="page-btn-hidden">
+                    <button id="1" type="submit" name="page-no" value="1">1</button>
+                    <button id="2" type="submit" name="page-no" value="2">2</button>
+                </div>
+            </form>
+            
+        </div>
+        
+        <div class="row">
+            {% if p1.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p1.id}}">
+                    {% load static %}
+                    <img src="{% static p1.img %}">
+                    <h4>{{p1.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>₹{{p1.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+
+            {% if p2.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p2.id}}">
+                    {% load static %}
+                <img src="{% static p2.img %}">
+                <h4>{{p2.name}}</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </div>
+
+                <p>₹{{p2.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+
+
+            {% if p3.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p3.id}}">
+                    {% load static %}
+                    <img src="{% static p3.img %}">
+                    <h4>{{p3.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        
+                        <i class="fa fa-star-o"></i>
+                    </div>
+
+                    <p>₹{{p3.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+
+            {% if p4.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p4.id}}">
+                    {% load static %}
+                    <img src="{% static p4.img %}">
+                    <h4>{{p4.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+
+                    <p>₹{{p4.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="row">
+            {% if p5.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p5.id}}">
+                    {% load static %}
+                    <img src="{% static p5.img %}">
+                    <h4>{{p5.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+
+                    <p>₹{{p5.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+
+            {% if p6.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p6.id}}">
+                    {% load static %}
+                    <img src="{% static p6.img %}">
+                    <h4>{{p6.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+
+                    <p>₹{{p6.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+            
+            {% if p7.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p7.id}}">
+                    {% load static %}
+                    <img src="{% static p7.img %}">
+                    <h4>{{p7.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+
+                    <p>₹{{p7.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+            
+            {% if p8.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p8.id}}">
+                    {% load static %}
+                    <img src="{% static p8.img %}">
+                    <h4>{{p8.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+
+                    <p>₹{{p8.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="row">
+            
+            {% if p9.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p9.id}}">
+                    {% load static %}
+                    <img src="{% static p9.img %}">
+                    <h4>{{p9.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-alt"></i>
+                    </div>
+
+                    <p>₹{{p9.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+
+            {% if p10.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p10.id}}">
+                    {% load static %}
+                    <img src="{% static p10.img %}">
+                    <h4>{{p10.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+
+                    <p>₹{{p10.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+            
+            {% if p11.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p11.id}}">
+                    {% load static %}
+                    <img src="{% static p11.img %}">
+                    <h4>{{p11.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+
+                    <p>₹{{p11.price}}</p>
+                </a>
+            </div>
+            {% endif %}
+            
+            {% if p12.name != None %}
+            <div class="col-4">
+                <a href="/product/{{p12.id}}">
+                    {% load static %}
+                    <img src="{% static p12.img %}">
+                    <h4>{{p12.name}}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+
+                    <p>₹{{ p12.price }}</p>
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="page-btn">
+            <button id="" name="page-no-btn" class="1" onclick="submit_page(this.className);">1</button>
+            <button id="" name="page-no-btn" class="2" onclick="submit_page(this.className);">2</button>
+        </div>
+
+    </div>
+
+
+    <!-- --footer-- -->
+
+    {% include 'footer.html' %}
+
+<!-- --js for toggle menu-- -->
+{% load static %}
+<script>
+
+    var MenuItems = document.getElementById("MenuItems")
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        }
+        else {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+    
+    function submit_sort()
+    {
+        document.getElementById("sort-form").submit();
+    }
+ 
+    var page = "{{ page_no }}";
+    var page_nos = document.getElementsByName("page-no-btn")
+    for (let i = 0; i < page_nos.length; i++) {
+        if (page_nos[i].className == page) {
+            page_nos[i].id = "active";
+        }
+        else
+        {
+            page_nos[i].id = "";
+        }
+    }
+    document.getElementsByClassName(page)[0].id = "active";
+
+    var select = "{{select}}"
+    document.getElementById("sort-id").selectedIndex = select;
+</script>
+
+<script>
+    function submit_page(id) {
+        button = document.getElementById(id);
+        button.click();
+    }
+</script>
+</body>
+
+</html>

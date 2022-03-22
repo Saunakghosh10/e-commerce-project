@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta naem="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - E commerce Website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "STYLE.CSS" %}">
+
+</head>
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+
+<body>
+
+
+    <div class="container">
+        {% include 'navbar.html' %}
+
+    </div>
+
+    <!-- --cart items details-- -->
+
+    <div class="small-container cart-page">
+
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+            {% load accounts_tags %}
+            {% for model in qset %}
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        {% load static %}
+                        <img src="{% static model.img %}">
+                        <div>
+                            <p>{{model.name}}</p>
+                            <small>Price: ${{model.price}}</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+
+                    </div>
+                </td>
+                {% with quantity|list_item:forloop.counter0 as amt %}
+                <td><input type="number" value={{amt}} readonly="true"></td>
+                <td>${% mul model.price amt %}</td>
+                {% endwith %}
+            {% endfor %}
+            <div class="total-price">
+                <tr>
+                    <td>
+                        <b>Total:</b>
+                    </td>
+                    
+                    <td>
+                        <b>{{qtotal}}</b>
+                    </td>
+
+                    <td>
+                        <b>${{total}}</b>
+                    </td>
+                </tr>
+            </div>
+            <form action="/checkout/" method="POST"> {% csrf_token %}
+                <button class="checkout-btn" type="submit" name="sbmt-btn" value={{total}}>Checkout</button>
+            </form>
+            <!--<tr>
+                <td>
+                    <div class="cart-info">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/buy-1.jpg" %}">
+                        <div>
+                            <p>Printed T-shirt</p>
+                            <small>Price: $50.00</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+
+                    </div>
+                </td>
+                <td><input type="number" value="1" readonly></td>
+                <td>$50.00</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/buy-2.jpg" %}">
+                        <div>
+                            <p>Printed T-shirt</p>
+                            <small>Price: $70.00</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+
+                    </div>
+                </td>
+                <td><input type="number" value="1" readonly></td>
+                <td>$50.00</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/buy-3.jpg" %}">
+                        <div>
+                            <p>Printed T-shirt</p>
+                            <small>Price: $60.00</small>
+                            <br>
+                            <a href="">Remove</a>
+                        </div>
+
+                    </div>
+                </td>
+                <td><input type="number" value="1" readonly></td>
+                <td>$50.00</td>
+            </tr>-->
+        </table>
+
+        
+    </div>
+
+    <!-- --footer-- -->
+
+    
+    {% include 'footer.html' %}
+
+    <!-- --js for toggle menu-- -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems")
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+
+        
+    </script>
+
+
+</body>
+
+</html>

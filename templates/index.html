@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E COMMERCE WEB</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'STYLE.CSS' %}">
+
+</head>
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+{% load static %}
+<script
+    src="https://kit.fontawesome.com/75c5922cab.js"
+    crossorigin="anonymous"
+  ></script>
+
+
+
+
+<body>
+
+    <div class="header">
+        <div class="container">
+            {% include 'navbar.html' %}
+            <div class="row">
+                <div class="col-2">
+                    <h1><b>Give Yourself a <br> New Style!</b>
+
+                    </h1>
+                    <p>We’re in Business to Improve Lives</p>
+                    <a href="products" class="btn">Explore Now &#8594;
+                    </a>
+
+                </div>
+                <div class="col-2">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/image1.png" %}" alt="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---featured categrories --- -->
+
+    <div class="categories">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/category-1.jpg" %}" alt="">
+                </div>
+                <div class="col-3">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/category-2.jpg" %}" alt="">
+                </div>
+                <div class="col-3">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/category-3.jpg" %}" alt="">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ---featured products --- -->
+
+    <div class="small-container">
+        <h2 class="title">Best Sellers  </h2>
+        <div class="row">
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/1"><img src="{% static "RedStore_Img/images/product-1.jpg" %}">
+                <h4>Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+
+                <p>₹50.00</p></a>
+            </div>
+
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/2"><img src="{% static "RedStore_Img/images/product-2.jpg" %}">
+                <h4>HRX Black Green Shoe</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </div>
+
+                <p>₹70.00</p></a>
+            </div>
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/3"><img src="{% static "RedStore_Img/images/product-3.jpg" %}">
+                <h4>Grey Track Pants</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+
+                <p>₹40.00</p></a>
+            </div>
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/4"><img src="{% static "RedStore_Img/images/product-4.jpg" %}">
+                <h4>Puma Blue T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+
+                <p>₹50.00</p></a>
+            </div>
+
+        </div>
+
+        <!-- ---latest products--- -->
+
+
+        <h2 class="title">Latest Products</h2>
+        <div class="row">
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/5"><img src="{% static "RedStore_Img/images/product-5.jpg" %}">
+                <h4>Grey Long Sneakers</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </div>
+
+                <p>₹70.00</p></a>
+            </div>
+
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/6"><img src="{% static "RedStore_Img/images/product-6.jpg" %}">
+                <h4>Puma Black Triangle T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+
+                <p>₹50.00</p></a>
+            </div>
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/7"><img src="{% static "RedStore_Img/images/product-7.jpg" %}">
+                <h4>HRX Sport Socks</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+
+                <p>₹30.00</p></a>
+            </div>
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/8"><img src="{% static "RedStore_Img/images/product-8.jpg" %}">
+                <h4>Fossil Black Dial Watch</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+
+                <p>₹150.00</p></a>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/9"><img src="{% static "RedStore_Img/images/product-9.jpg" %}">
+                <h4>Black Watch</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </div>
+
+                <p>₹50.00</p></a>
+            </div>
+
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/10"><img src="{% static "RedStore_Img/images/product-10.jpg" %}">
+                <h4>Puma Red-Black Shoe</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+
+                <p>₹50.00</p></a>
+            </div>
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/11"><img src="{% static "RedStore_Img/images/product-11.jpg" %}">
+                <h4>Grey Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+
+                <p>₹50.00</p></a>
+            </div>
+            <div class="col-4">
+                {% load static %}
+                <a href="/product/12"><img src="{% static "RedStore_Img/images/product-12.jpg" %}">
+                <h4>Black Nike Track Pants</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+
+                <p>₹50.00</p></a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ---offer--- -->
+
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/exclusive.png" %}" class="offer-img" alt="">
+                </div>
+                <div class="col-2">
+                    <p>Exclusively Available on VIT Store</p>
+                    <h1>
+                        Smart Band 4
+                    </h1>
+                    <small>
+                        Mi Smart Band 4 0.94-inch AMOLED Color Display, 20 Days Battery, 5ATM Water Resistant, Music
+                        Control, Unlimited Watch Faces, Compatible with Android and iOS
+                    </small>
+                    <a href="" class="btn">Buy Now &#8594;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ---testimonial--- -->
+
+    <div class="testimonial">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-3">
+
+                    <p>I love the UI of this website as it was so joyfull and easy to understand the funtinalities of it in such a short time.</p>
+                    <div class="rating">
+
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/user-1.png" %}"alt="">
+                        <h3>
+                            Paritosh Singh
+                        </h3>
+
+
+                    </div>
+                </div>
+
+                <div class="col-3">
+
+                    <p>Products listed on this website are amazing and they are available on very affordable prices.</p>
+                    <div class="rating">
+
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/user-2.png" %}"alt="">
+                        <h3>
+                            Joseph Serrao
+                        </h3>
+
+
+                    </div>
+                </div>
+                <div class="col-3">
+
+                    <p>The services and the quaility of the products is way more than I expected.It's awesome!.</p>
+                    <div class="rating">
+
+                        {% load static %}
+                        <img src="{% static "RedStore_Img/images/user-3.png" %}"alt="">
+                        <h3>
+                            Saunak
+                        </h3>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---brands--- -->
+
+    <div class="brands">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-5">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/logo-godrej.png" %}">
+                </div>
+                <div class="col-5">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/logo-oppo.png" %}">
+                </div>
+                <div class="col-5">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/logo-coca-cola.png" %}">
+                </div>
+                <div class="col-5">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/logo-paypal.png" %}">
+                </div>
+                <div class="col-5">
+                    {% load static %}
+                    <img src="{% static "RedStore_Img/images/logo-philips.png" %}">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- --footer-- -->
+
+    {% include 'footer.html' %}
+
+<!-- --js for toggle menu-- -->
+
+{% load static %}
+<script>
+var MenuItems = document.getElementById("MenuItems")
+
+MenuItems.style.maxHeight = "0px";
+
+function menutoggle(){
+    if(MenuItems.style.maxHeight == "0px")
+    {
+        MenuItems.style.maxHeight = "200px";
+    }
+
+    else
+    {
+        MenuItems.style.maxHeight = "0px";
+    }
+}
+
+
+</script>
+
+</body>
+
+</html>

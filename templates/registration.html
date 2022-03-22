@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login And Registration Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "STYLE.CSS" %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "reg.css" %}">
+    
+
+</head>
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+
+<body id="all">
+
+    <div class="container">
+        {% include 'navbar.html' %}
+    </div>
+
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                {% load static %}
+                <img src="{% static "login-reg-img/gp.png" %}" alt="">
+                {% load static %}
+                <img src="{% static "login-reg-img/fb.png" %}" alt="">
+                {% load static %}
+                <img src="{% static "login-reg-img/tw.png" %}" alt="">
+            </div>
+            <form id="login" class="input-group" action="login/" method="POST" > {% csrf_token %}
+                {% if uname == '' %}
+                <input type="email" class="input-field" placeholder="Email ID" name="email" required>
+                <input type="password" class="input-field" placeholder="Password" name="pass" required>
+                <input type="checkbox" class="check-box"><span>
+                    Remember Password
+                </span>
+                <button type="submit" class="submit-btn">Log In</button>
+                {% else %}
+                <p>You are already signed into an account. Please log out to continue</p>
+                {% endif %}
+            </form>
+            <form id="register" class="input-group" action="signup/" method="POST"> {% csrf_token %}
+                {% if uname == '' %}
+                <input type="email" class="input-field" placeholder="Email ID" name="email" required>
+                <input id = "pwd" type="password" class="input-field" placeholder="Password" name="pass" required>
+                <input id = "confirm-pwd" type="password" class="input-field" placeholder="Confirm Password" required>
+                <span id = "message" style="color:red"> </span> <br><br>
+                <label for="terms">
+                    <input id="terms" type="checkbox" class="check-box" required><span>
+                        I agree to the terms & conditions
+                    </span>
+                </label>
+                <button type="submit" class="submit-btn" onsubmit="return verifyPassword()">Register</button>
+                {% else %}
+                <p>You are already signed into an account. Please log out to continue</p>
+                {% endif %}
+            </form>
+        </div>
+
+    </div>
+
+    {% include 'footer.html' %}
+
+    {% load static %}
+    <script>
+        var x = document.getElementById("login")
+        var y = document.getElementById("register")
+        var z = document.getElementById("btn")
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        
+        }  
+
+    </script>
+
+    <script>  
+        function verifyPassword() {  
+        var pwd1 = document.getElementById("pwd").value;
+        var pwd2 = document.getElementById("confirm-pwd").value;  
+        //check empty password field  
+        if(pwd1 != pwd2) {  
+            document.getElementById("message").innerHTML = "**Fill the password please!";  
+            return false;  
+        }  
+        
+        //minimum password length validation  
+        if(pwd1.length < 8) {  
+            document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
+            return false;  
+        }  
+        
+        //maximum length of password validation  
+        if(pwd1.length > 15) {  
+            document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+            return false;  
+        }  
+        }  
+    </script>  
+
+</body>
+
+</html>

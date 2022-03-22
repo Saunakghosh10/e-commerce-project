@@ -1,0 +1,51 @@
+/* --- all products --- */
+
+.row-2 {
+    margin: 100px auto 50px;
+    justify-content: space-between !important;
+  }
+  
+  select {
+    border: 1px solid #ff523b;
+    padding: 5px;
+  }
+  
+  select:focus {
+    outline: none;
+  }
+  
+  .page-btn {
+    margin: 0 auto 80px;
+  }
+  
+  .page-btn button {
+    display: inline-block;
+    border: 1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    line-height: 1em;
+  }
+  
+  .page-btn button:hover {
+    background: orangered;
+    color: white;
+  }
+
+  #active {
+    background: orangered;
+    color: white;
+    cursor: default;
+  }
+
+  .page-btn-hidden {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  #sort-form {
+    max-width: 137px;
+  }

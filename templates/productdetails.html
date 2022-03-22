@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta naem="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - E commerce Website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "STYLE.CSS" %}">
+
+</head>
+{% load static %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+{% load static %}
+<script src="https://kit.fontawesome.com/75c5922cab.js" crossorigin="anonymous"></script>
+
+
+
+
+<body>
+
+
+    <div class='container'>
+        {% include 'navbar.html' %}
+    </div>
+    
+
+    <!-- --single product details -- -->
+
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                {% load static %}
+                <img src="{% static p1.img %}" width="100%" id="ProductImg">
+
+            </div>
+            <div class="col-2">
+                <p>Home / {{p1.name}}</p>
+                <h1>{{p1.name}}</h1>
+                <h4>₹{{p1.price}}</h4>
+                <select>
+                    <option>Select Size</option>
+                    <option>XXL</option>
+                    <option>XL</option>
+                    <option>LARGE</option>
+                    <option>Medium</option>
+                    <option>Small</option>
+                </select>
+                <form id="add" action="" method="post"> {% csrf_token %}
+                    <input name="quantity" min="1" type="number" value="1">
+                    <a class="btn" onclick="addToCart();">Add To Cart</a>
+                </form> 
+                <h3>Product Details<i class="fa fa-indent"></i></h3>
+                <br>
+                <p>{{p1.desc}}</p>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ---title --- -->
+
+<div class="small-container">
+    <div class="row row-2">
+        <h2>Related Products</h2>
+        <a href="/products">View More</a>
+    </div>
+</div>
+
+
+    <div class="small-container">
+
+
+        <div class="row">
+            <div class="col-4">
+                <a href="/product/{{p2.id}}">
+                    {% load static %}
+                    <img src="{% static p2.img %}">
+                    <h4>{{p2.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>₹{{p2.price}}</p>
+                </a>
+            </div>
+
+            <div class="col-4">
+                <a href="{{p3.id}}">
+                    {% load static %}
+                    <img src="{% static p3.img %}">
+                    <h4>{{p3.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>₹{{p3.price}}</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{p4.id}}">
+                    {% load static %}
+                    <img src="{% static p4.img %}">
+                    <h4>{{p4.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>₹{{p4.price}}</p>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="{{p5.id}}">
+                    {% load static %}
+                    <img src="{% static p5.img %}">
+                    <h4>{{p5.name}}</h4>
+                    <div class="rating">
+                    </div>
+                    <p>₹{{p5.price}}</p>
+                </a>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <!-- --footer-- -->
+
+    {% include 'footer.html' %}
+
+    <!-- --js for toggle menu-- -->
+    {% load static %}
+    <script>
+        var MenuItems = document.getElementById("MenuItems")
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+
+        
+
+        function addToCart()
+        {
+            var add = document.getElementById("add")
+            add.submit();
+        }
+    </script>
+
+<!-- --js for product gallery -- -->
+{% load static %}
+<script>
+
+var ProductImg = document.getElementById("ProductImg");
+
+var SmallImg = document.getElementsByClassName("small-img");
+
+SmallImg[0].oneclick = function()
+{
+    ProductImg.src = SmallImg[0].src;
+ 
+}
+SmallImg[1].oneclick = function()
+{
+    ProductImg.src = SmallImg[1].src;
+ 
+}
+SmallImg[2].oneclick = function()
+{
+    ProductImg.src = SmallImg[2].src;
+ 
+}
+SmallImg[3].oneclick = function()
+{
+    ProductImg.src = SmallImg[3].src;
+ 
+}
+
+</script>
+
+</body>
+
+</html>
